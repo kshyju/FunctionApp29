@@ -4,17 +4,17 @@ namespace FunctionApp29
 {
     public interface IMyScopedService
     {
-        string GetMessage();
+        string GetId();
     }
     public class MyScopedService : IMyScopedService
     {
-        private DateTime _created;
+        private Guid _id;
         public MyScopedService()
         {
-            _created = DateTime.Now;
+            // set the id during creation of this class instance.
+            _id = Guid.NewGuid();
         }
 
-        public string GetMessage()
-            => _created.ToString("yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture);
+        public string GetId() => _id.ToString();
     }
 }

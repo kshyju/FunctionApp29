@@ -19,13 +19,13 @@ namespace FunctionApp29
         [Function("Function1")]
         public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
         {
-            var msg = _myScopedService.GetMessage();
+            var serviceId = _myScopedService.GetId();
 
-            _logger.LogInformation($"Inside Function.IMyScopedService.Msg:{msg}");
+            _logger.LogInformation($"Inside Function. IMyScopedService.Id:{serviceId}");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/html; charset=utf-8");
-            response.WriteString($"<h2>MSG from ScopedService: {msg}</h2>");
+            response.WriteString($"<h2>IMyScopedService.Id: {serviceId}</h2>");
 
             return response;
         }
