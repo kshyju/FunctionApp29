@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "FunctionApp29": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7202",
+      "launchBrowser": false
+    }
+  }
+}
