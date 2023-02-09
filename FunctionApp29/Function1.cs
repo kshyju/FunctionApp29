@@ -21,7 +21,7 @@ namespace FunctionApp29
         {
             var serviceId = _myScopedService.GetId();
 
-            _logger.LogInformation($"Inside Function. IMyScopedService.Id:{serviceId}");
+            _logger.LogInformation($"Inside Function. IMyScopedService.Id: {serviceId}");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/html; charset=utf-8");

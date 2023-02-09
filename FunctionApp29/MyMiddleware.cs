@@ -18,7 +18,7 @@ namespace FunctionApp29
             var _scopedService = context.InstanceServices.GetRequiredService<IMyScopedService>();
 
             var serviceId = _scopedService.GetId();
-            _logger.LogInformation($"Inside Middlewr. IMyScopedService.Id:{serviceId}");
+            _logger.LogInformation($"Inside Middlewr. IMyScopedService.Id: {serviceId}");
 
             await next(context);
         }
